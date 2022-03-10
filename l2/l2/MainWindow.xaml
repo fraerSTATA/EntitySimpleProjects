@@ -1,0 +1,28 @@
+﻿<Window x:Class="l2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:l2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="dgPeople">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Surname}" Header="Фамилия" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Age}" Header="Возраст" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+            <Button x:Name="bUpdate" Content="Update" Click="BUpdate_Click"
+                    Height="30" Margin="10"/>
+            <Button x:Name="bDelete" Content="Delete" Click="BDelete_Click"
+                    Height="30" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
