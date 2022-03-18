@@ -79,7 +79,7 @@ namespace _1
 
             using (HotelEntities db = new HotelEntities())
             {
-                var bookiangs = db.Booking.Join(db.Customers,
+                var bookings = db.Booking.Join(db.Customers,
                     booking => booking.CustomerId,
                     customer => customer.Id,
                     (booking, customer) => new
